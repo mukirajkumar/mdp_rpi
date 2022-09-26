@@ -64,25 +64,25 @@ def msgClient():
 #capture of image, automatic sending of image to server on PC
 class Client():
     def imageClient(self):
-        # print("entering imgClient function")
-        # client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # print("socket done")
-        # client.connect((host, port))
-        # print('Client 1 connected to server')
+        print("entering imgClient function")
+        client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        print("socket done")
+        client.connect((host, port))
+        print('Client 1 connected to server')
 
         captureImage()
         print("image captured")
-        # image = open(path, 'rb')
-        # imageData = image.read(2048)
-        # while imageData:
-        #     client.send(imageData)
-        #     imageData = image.read(2048)
-        # print('Finished sending image')
-        # image.close()
-        # client.close()
-        # print('Client 1 closed')
-        # time.sleep(3)
-        # msgClient()
+        image = open(path, 'rb')
+        imageData = image.read(2048)
+        while imageData:
+             client.send(imageData)
+             imageData = image.read(2048)
+        print('Finished sending image')
+        image.close()
+        client.close()
+        print('Client 1 closed')
+        time.sleep(3)
+        msgClient()
 
 
 # if __name__ == "__main__":

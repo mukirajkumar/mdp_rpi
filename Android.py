@@ -8,7 +8,7 @@ import os
 
 class Android(object):
     MAC_ADDRESS = "B8:27:EB:3A:91:84"
-    RFCOMM = 1
+    RFCOMM = 1 # port number 
 
     # Initialise the connection with the Android tablet
     def __init__(self):
